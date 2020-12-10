@@ -3,11 +3,11 @@ def inputGetFile(String savedfile = null) {
     def filename = null
     
     if (savedfile == null) {
-        def inputFile = input message: 'Upload file', parameters: [file(name: 'library_data_upload'), string(name: 'filename', defaultValue: 'public.key')]
+        def inputFile = input message: 'Upload file', parameters: [file(name: 'file_upload'), string(name: 'filename', defaultValue: 'public.key')]
         filedata = inputFile['library_data_upload']
         filename = inputFile['filename']
     } else {
-        def inputFile = input message: 'Upload file', parameters: [file(name: 'library_data_upload')]
+        def inputFile = input message: 'Upload file', parameters: [file(name: 'file_upload')]
         filedata = inputFile
         filename = savedfile
     }
